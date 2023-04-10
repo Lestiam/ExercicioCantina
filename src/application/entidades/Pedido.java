@@ -7,11 +7,16 @@ public class Pedido {
     private Massa massa;
     private Cliente cliente;
     private List<Ingredientes> ingredientes;
-    private Double total;
 
-    public void pedido(int quantidade, String nome){ //TODO  A classe pedido irá conter um método que calcula o valor do pedido.
+    public Pedido(Cliente cliente, Massa massa, ArrayList<Ingredientes> ingredientes) {
+        this.cliente = cliente;
+        this.massa = massa;
+        this.ingredientes = ingredientes;
+    }
 
-        total = (getMassa().getValor()) + ingredientes.size() * 2;
+    public double calculaPedido(){
+
+        return massa.getValor() + (ingredientes.size() * 2);
     }
 
     public Massa getMassa() {
@@ -37,4 +42,6 @@ public class Pedido {
     public void setIngredientes(List<Ingredientes> ingredientes) {
         this.ingredientes = ingredientes;
     }
+
+
 }
